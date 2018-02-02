@@ -6,6 +6,8 @@
 
 using namespace std;
 
+
+#define PI 3.14159265
 //Menu
 int menu();
 
@@ -23,8 +25,12 @@ double areaTriangulo(double, double, double);
 
 double formulaS(double, double, double);
 
-//Angulos
-double angulos(double, double, double);
+//Angulo alpha 
+double anguloA(double, double, double);
+//Angulo betta
+double anguloB(double, double, double);
+//Angulo Gamma
+double anguloG(double, double, double);
 
 //TODO:: numero triangular previo
 
@@ -62,8 +68,13 @@ int main(){
 				cout<<"-------------------------"<<endl;
 				cout<<"Formula de Area "<<endl;
 
-				areaTriangulo(ladOA, ladOB, ladOC);
-
+				areaTriangulo(ladOA, ladOB, ladOC); 
+				cout<<"-----------------------------"<<endl;
+				cout<<"Angulos del triangulo"<<endl;
+				cout<<"Angulo Alpha: "<<anguloA(ladOA,ladOB,ladOC)<<endl;
+				cout<<"Angulo Betta: "<<anguloB(ladOA,ladOB,ladOC)<<endl;
+				cout<<"Angulo Gamma: "<<anguloG(ladOA,ladOB,ladOC)<<endl;
+				
 				}
 				break;
 			case 3:
@@ -131,6 +142,7 @@ int numeroTriangularRandom(int randomNumber){
 	}else{
 		cout<<"El numero random no es triangular"<<endl;
 	}
+	
 }
 
 //Formula S
@@ -167,4 +179,25 @@ double areaTriangulo(double ladoa, double ladob, double ladoc){
 }
 
 
-//Angulos del triangulo 
+//Angulo alpha
+
+double anguloA(double ladosa, double ladosb, double ladosc){
+	double anguloa = 0;
+	anguloa = acos(((pow(ladosb,2)) + ((pow(ladosc, 2)) - (pow(ladosa, 2)))) / (2*ladosb*ladosc)) * 180/PI; 	
+	return anguloa;
+}
+
+//Angulo betta 
+double anguloB(double ladosa, double ladosb, double ladosc){
+	double angulob = 0;
+	angulob = acos(((pow(ladosa,2)) + ((pow(ladosc, 2)) - (pow(ladosb, 2)))) / (2*ladosa*ladosc)) * 180/PI;
+	return angulob;
+}
+
+//Angulo Gamma
+double anguloG(double ladosa, double ladosb, double ladosc){
+	double angulog = 0;
+	angulog = 180 - anguloA(ladosa,ladosb,ladosc) -  anguloB(ladosa,ladosb,ladosc);
+	return angulog;
+
+}
