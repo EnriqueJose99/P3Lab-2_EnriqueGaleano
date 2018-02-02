@@ -57,10 +57,19 @@ int menu(){
 //funcion de numero triangular
 int numeroTriangulares(int numeroTriangular){
 	int numeroX = 0;
-	for(int i=1;i<numeroX;i++){
-		numeroX+=i;
+	int i = 0;
+	do{
+		i++;
+		numeroX = (i*(i+ 1)/2);
+		cout<<numeroX;
+	}while(numeroTriangular > numeroX);
+	
+	if(numeroTriangular == numeroX){
+		cout<<"Su numero es triangular"<<endl;
+		return numeroX;
+		
+	}else{
+		cout<<"Su numero no es triangular"<<endl;
 	}
-	cout<<"Su numero es trinagular"<<endl;
-	return numeroTriangular=numeroX;
 
 }
