@@ -27,10 +27,15 @@ double formulaS(double, double, double);
 
 //Angulo alpha 
 double anguloA(double, double, double);
+
 //Angulo betta
 double anguloB(double, double, double);
+
 //Angulo Gamma
 double anguloG(double, double, double);
+
+//Comparacion 
+double compracionDe180(double, double, double);
 
 //TODO:: numero triangular previo
 
@@ -40,50 +45,49 @@ int main(){
 	while(option != 4){
 		switch(option = menu()){
 			case 1:{
-				int randomNumber = 0;
-				cout<<"Entro al ejercicio 1 "<<endl;
-				cout<<"--------------------------"<<endl;
-				cout<<"Parte numero 1"<<endl;
-				cout<<"Ingrese un numero para ver si su numero es triangular: "<<endl;
-				cin>>numeroVerificacion;
-				numeroTriangular(numeroVerificacion);
-				cout<<"--------------------------"<<endl;
-				cout<<"Parte numero 2"<<endl;
-				randomNumber = rand() % 100 + 1;
-				cout<<"El numero radom es: "<<randomNumber<<endl;
-				numeroTriangularRandom(randomNumber);
+					    int randomNumber = 0;
+						cout<<"Entro al ejercicio 1 "<<endl;
+						cout<<"--------------------------"<<endl;
+						cout<<"Parte numero 1"<<endl;
+						cout<<"Ingrese un numero para ver si su numero es triangular: "<<endl;
+						cin>>numeroVerificacion;
+						numeroTriangular(numeroVerificacion);
+						cout<<"--------------------------"<<endl;
+						cout<<"Parte numero 2"<<endl;
+						randomNumber = rand() % 100 + 1;
+						cout<<"El numero radom es: "<<randomNumber<<endl;
+						numeroTriangularRandom(randomNumber);
+						break;
 				   }
-				break;
 			case 2:{
-				double ladOA = 0, ladOB = 0, ladOC = 0;
-
-				cout<<"Ingrese lado a: "<<endl;
-				cin >> ladOA;
-				cout<<"Ingrese lado b: "<<endl;
-				cin >> ladOB;
-				cout<<"Ingrese lado c: "<<endl ;
-				cin >> ladOC;
-				//formulaS(ladOA, ladOB, ladOC);
-				cout<<"La respuesta de la formula s es: "<<formulaS(ladOA, ladOB, ladOC)<<endl;
-				cout<<"-------------------------"<<endl;
-				cout<<"Formula de Area "<<endl;
-
-				areaTriangulo(ladOA, ladOB, ladOC); 
-				cout<<"-----------------------------"<<endl;
-				cout<<"Angulos del triangulo"<<endl;
-				cout<<"Angulo Alpha: "<<anguloA(ladOA,ladOB,ladOC)<<endl;
-				cout<<"Angulo Betta: "<<anguloB(ladOA,ladOB,ladOC)<<endl;
-				cout<<"Angulo Gamma: "<<anguloG(ladOA,ladOB,ladOC)<<endl;
-				
-				}
-				break;
+						double ladOA = 0, ladOB = 0, ladOC = 0;
+						cout<<"Ingrese lado a: "<<endl;
+						cin >> ladOA;
+						cout<<"Ingrese lado b: "<<endl;
+						cin >> ladOB;
+						cout<<"Ingrese lado c: "<<endl ;
+						cin >> ladOC;
+						//formulaS(ladOA, ladOB, ladOC);
+						cout<<"La respuesta de la formula s es: "<<formulaS(ladOA, ladOB, ladOC)<<endl;
+						cout<<"-------------------------"<<endl;
+						cout<<"Formula de Area "<<endl;
+						areaTriangulo(ladOA, ladOB, ladOC); 
+						cout<<"-----------------------------"<<endl;
+						cout<<"Angulos del triangulo"<<endl;
+						cout<<"Angulo Alpha: "<<anguloA(ladOA,ladOB,ladOC)<<endl;
+						cout<<"Angulo Betta: "<<anguloB(ladOA,ladOB,ladOC)<<endl;
+						cout<<"Angulo Gamma: "<<anguloG(ladOA,ladOB,ladOC)<<endl;
+						cout<<"-----------------------------"<<endl;
+						cout<<"Si es Rectangular o NO"<<endl;
+						compracionDe180(ladOA, ladOB, ladOC);
+						break;
+				   }
 			case 3:
 				break;
 		}
 	}
 	return 0;
 }
-
 
 
 int menu(){
@@ -199,5 +203,14 @@ double anguloG(double ladosa, double ladosb, double ladosc){
 	double angulog = 0;
 	angulog = 180 - anguloA(ladosa,ladosb,ladosc) -  anguloB(ladosa,ladosb,ladosc);
 	return angulog;
-
 }
+//Comparacion de 180 
+double compracionDe180(double ladosA, double ladosB, double ladosC){
+	if((anguloA(ladosA, ladosB, ladosC)) || (anguloB(ladosA, ladosB, ladosC))|| (anguloG(ladosA, ladosB, ladosC))){
+		cout<<"Es un Triangulo Rectangular"<< endl;
+	}else{
+		cout<<"El Triangulo no es Rectangular"<<endl;
+	}
+}
+
+
