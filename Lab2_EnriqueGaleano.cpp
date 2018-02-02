@@ -23,7 +23,8 @@ double areaTriangulo(double, double, double);
 
 double formulaS(double, double, double);
 
-
+//Angulos
+double angulos(double, double, double);
 
 //TODO:: numero triangular previo
 
@@ -57,7 +58,7 @@ int main(){
 				cout<<"Ingrese lado c: "<<endl ;
 				cin >> ladOC;
 				//formulaS(ladOA, ladOB, ladOC);
-				cout<<"La respuesta de la formula s es: "<<formulaS(ladOa, ladOB, ladOC)<<endl;
+				cout<<"La respuesta de la formula s es: "<<formulaS(ladOA, ladOB, ladOC)<<endl;
 				cout<<"-------------------------"<<endl;
 				cout<<"Formula de Area "<<endl;
 
@@ -163,5 +164,7 @@ double areaTriangulo(double ladoa, double ladob, double ladoc){
 
 
 	return area;
-
 }
+
+
+//Angulos del triangulo 
