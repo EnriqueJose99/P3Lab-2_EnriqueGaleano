@@ -56,8 +56,8 @@ int main(){
 				cin >> ladOB;
 				cout<<"Ingrese lado c: "<<endl ;
 				cin >> ladOC;
-				formulaS(ladOA, ladOB, ladOC);
-
+				//formulaS(ladOA, ladOB, ladOC);
+				cout<<"La respuesta de la formula s es: "<<formulaS(ladOa, ladOB, ladOC)<<endl;
 				cout<<"-------------------------"<<endl;
 				cout<<"Formula de Area "<<endl;
 
@@ -139,9 +139,6 @@ double formulaS(double ladoA, double ladoB, double ladoC){
 	int suma = 0;
 	s = (ladoA + ladoB + ladoC)/2;
 	suma = ladoA + ladoB + ladoC;
-	cout<<"s = " << "( " << ladoA <<" + " << ladoB << " + " << ladoC << " )"<< " /2"<<endl;
-	cout<<"s = " << "( " << suma << " )" << "/2"<<endl;
-	cout<<"El resultado de la fromula S es: "<<s<<endl;
 	return s;
 }
 
@@ -161,9 +158,10 @@ double areaTriangulo(double ladoa, double ladob, double ladoc){
 	cout<<"La resta del lado B "<<restaB<<endl;
 	cout<<"La resta del lado C "<<restaC<<endl;
 	
-	area =  sqrt();
+	area =  sqrt((formulaS(ladoa,ladob,ladoc))*(restaA)*(restaB)*(restaC));
+	cout<<"El area es: "<<area<<endl;
 
 
-	return ;
+	return area;
 
 }
