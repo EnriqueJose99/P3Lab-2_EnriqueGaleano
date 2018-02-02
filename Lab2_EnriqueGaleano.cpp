@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
-
-
+#include <math.h>
+#include <cmath>
 
 
 using namespace std;
@@ -17,6 +17,12 @@ int numeroTriangular(int);
 int numeroTriangularRandom(int);
 
 //Area del triangulo
+double areaTriangulo(double, double, double);
+
+//Formula s
+
+double formulaS(double, double, double);
+
 
 
 //TODO:: numero triangular previo
@@ -41,7 +47,23 @@ int main(){
 				numeroTriangularRandom(randomNumber);
 				   }
 				break;
-			case 2:
+			case 2:{
+				double ladOA = 0, ladOB = 0, ladOC = 0;
+
+				cout<<"Ingrese lado a: "<<endl;
+				cin >> ladOA;
+				cout<<"Ingrese lado b: "<<endl;
+				cin >> ladOB;
+				cout<<"Ingrese lado c: "<<endl ;
+				cin >> ladOC;
+				formulaS(ladOA, ladOB, ladOC);
+
+				cout<<"-------------------------"<<endl;
+				cout<<"Formula de Area "<<endl;
+
+				areaTriangulo(ladOA, ladOB, ladOC);
+
+				}
 				break;
 			case 3:
 				break;
@@ -108,4 +130,40 @@ int numeroTriangularRandom(int randomNumber){
 	}else{
 		cout<<"El numero random no es triangular"<<endl;
 	}
+}
+
+//Formula S
+
+double formulaS(double ladoA, double ladoB, double ladoC){
+	int s = 0;
+	int suma = 0;
+	s = (ladoA + ladoB + ladoC)/2;
+	suma = ladoA + ladoB + ladoC;
+	cout<<"s = " << "( " << ladoA <<" + " << ladoB << " + " << ladoC << " )"<< " /2"<<endl;
+	cout<<"s = " << "( " << suma << " )" << "/2"<<endl;
+	cout<<"El resultado de la fromula S es: "<<s<<endl;
+	return s;
+}
+
+
+//Formula de Area 
+double areaTriangulo(double ladoa, double ladob, double ladoc){
+	double area = 0;
+	double restaA = 0;
+	double restaB =0;
+	double restaC = 0;
+	double contiene = 0;
+	restaA = (formulaS(ladoa, ladob, ladoc) - ladoa);
+	restaB = (formulaS(ladoa, ladob, ladoc) - ladob);
+	restaC = (formulaS(ladoa, ladob, ladoc) - ladoc);
+
+    cout<<"La resta del lado A "<<restaA<<endl;
+	cout<<"La resta del lado B "<<restaB<<endl;
+	cout<<"La resta del lado C "<<restaC<<endl;
+	
+	area =  sqrt();
+
+
+	return ;
+
 }
