@@ -12,11 +12,13 @@ using namespace std;
 int menu();
 
 //Numero Triangular
-
 int numeroTriangular(int);
 
 //Numero Trinagular Random
 int numeroTriangularRandom(int);
+
+//Numero Triangular Previo
+int numeroTriangularPevio(int);
 
 //Area del triangulo
 double areaTriangulo(double, double, double);
@@ -82,8 +84,9 @@ int main(){
 						compracionDe180(ladOA, ladOB, ladOC);
 						break;
 				   }
-			case 3:
-				break;
+			case 3:{
+					   break;
+				   }
 		}
 	}
 	return 0;
@@ -119,14 +122,18 @@ int numeroTriangular(int numeroTriangular){
 		centinela1++;
 		numeroX = (centinela1*(centinela1+ 1)/2);
 		
+		if(numeroTriangular == numeroX){
+			cout<<"Su numero es triangular"<<endl;
+			return numeroX;
+			break;
+		}
+
 	}while(numeroTriangular > numeroX);
 	
 	if(numeroTriangular == numeroX){
 		cout<<"Su numero es triangular"<<endl;
 		return numeroX;
 		
-	}else{
-		cout<<"Su numero no es triangular"<<endl;
 	}
 
 }
@@ -149,8 +156,33 @@ int numeroTriangularRandom(int randomNumber){
 	
 }
 
-//Formula S
+//Numero Triangular Previo
 
+int numeroTriangularPevio(int numerTriangularP){
+	int numeroX = 0;
+	int centinela1 = 0; 
+	do{
+		centinela1++;
+		numeroX = (centinela1*(centinela1+ 1)/2);
+		
+		if(numeroTriangular == numeroX){
+			cout<<"Su numero es triangular"<<endl;
+			return numeroX;
+			break;
+		}
+
+	}while(numeroTriangular > numeroX);
+	
+	if(numeroTriangular == numeroX){
+		cout<<"Su numero es triangular"<<endl;
+		return numeroX;
+		
+	}
+
+}
+
+
+//Formula S
 double formulaS(double ladoA, double ladoB, double ladoC){
 	int s = 0;
 	int suma = 0;
