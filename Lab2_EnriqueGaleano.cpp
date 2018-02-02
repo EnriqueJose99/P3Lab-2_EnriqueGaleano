@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+
 
 
 
@@ -9,8 +11,10 @@ int menu();
 
 //Numero Triangular
 
-int numeroTriangulares(int);
+int numeroTriangular(int);
 
+//Numero Trinagular Random
+int numeroTriangularRandom(int);
 
 int main(){
 	int option = 0;
@@ -21,7 +25,7 @@ int main(){
 				cout<<"Entro al ejercicio 1 ";
 				cout<<"Ingrese un numero para ver si su numero es triangular: ";
 				cin>>numeroVerificacion;
-				numeroTriangulares(numeroVerificacion);
+				numeroTriangular(numeroVerificacion);
 				break;
 			case 2:
 				break;
@@ -55,7 +59,7 @@ int menu(){
 }
 
 //funcion de numero triangular
-int numeroTriangulares(int numeroTriangular){
+int numeroTriangular(int numeroTriangular){
 	int numeroX = 0;
 	int i = 0;
 	do{
@@ -73,3 +77,5 @@ int numeroTriangulares(int numeroTriangular){
 	}
 
 }
+
+//funcion de numero triangular Random
