@@ -16,16 +16,30 @@ int numeroTriangular(int);
 //Numero Trinagular Random
 int numeroTriangularRandom(int);
 
+//Area del triangulo
+
+
+//TODO:: numero triangular previo
+
 int main(){
 	int option = 0;
 	int numeroVerificacion = 0;
 	while(option != 4){
 		switch(option = menu()){
-			case 1:
-				cout<<"Entro al ejercicio 1 ";
-				cout<<"Ingrese un numero para ver si su numero es triangular: ";
+			case 1:{
+				int randomNumber = 0;
+				cout<<"Entro al ejercicio 1 "<<endl;
+				cout<<"--------------------------"<<endl;
+				cout<<"Parte numero 1"<<endl;
+				cout<<"Ingrese un numero para ver si su numero es triangular: "<<endl;
 				cin>>numeroVerificacion;
 				numeroTriangular(numeroVerificacion);
+				cout<<"--------------------------"<<endl;
+				cout<<"Parte numero 2"<<endl;
+				randomNumber = rand() % 100 + 1;
+				cout<<"El numero radom es: "<<randomNumber<<endl;
+				numeroTriangularRandom(randomNumber);
+				   }
 				break;
 			case 2:
 				break;
@@ -37,10 +51,11 @@ int main(){
 }
 
 
+
 int menu(){
 	int bandera = 0;
 	int numeroRespuesta = 0;
-	while(bandera == 0){
+	while(bandera == 0){ 
 		cout<<"**********Menu**********"<<endl;
 		cout<<" 1. Ejercicio de Numeros Triangulares "<<endl;
 		cout<<" 2. Ejercicio de Triangulo "<<endl;
@@ -61,11 +76,11 @@ int menu(){
 //funcion de numero triangular
 int numeroTriangular(int numeroTriangular){
 	int numeroX = 0;
-	int i = 0;
+	int centinela1 = 0; 
 	do{
-		i++;
-		numeroX = (i*(i+ 1)/2);
-		cout<<numeroX;
+		centinela1++;
+		numeroX = (centinela1*(centinela1+ 1)/2);
+		
 	}while(numeroTriangular > numeroX);
 	
 	if(numeroTriangular == numeroX){
@@ -79,3 +94,18 @@ int numeroTriangular(int numeroTriangular){
 }
 
 //funcion de numero triangular Random
+int numeroTriangularRandom(int randomNumber){
+	int numeroRandom = 0;
+	int centinela2 = 0;
+	do{
+		centinela2++;
+		numeroRandom = (centinela2*(centinela2+1)/2);
+													
+	}while(randomNumber > numeroRandom);
+	if(randomNumber==numeroRandom){
+		cout<<"El numero random es triangular"<<endl;
+		return numeroRandom;
+	}else{
+		cout<<"El numero random no es triangular"<<endl;
+	}
+}
