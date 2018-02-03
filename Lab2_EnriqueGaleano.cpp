@@ -181,7 +181,6 @@ int numeroTriangularPevio(int numeroPrevio){
 	for(int i=1;i<numeroPrevio;i++){
 		centinela1= centinela1+i;
 		if(centinela1 == numeroPrevio){
-			
 			cout<<"El numero triangular" <<numeroPrevio<<endl;
 			break;
 			
