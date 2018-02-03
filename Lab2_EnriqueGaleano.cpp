@@ -49,12 +49,12 @@ long int tercerEjrcicio(long int);
 int main(){
 	int option = 0;
 	int numeroVerificacion = 0;
-	//while(option != 4){
-		cout<<"Ingrese numero para opcion: ";
-		cin >> option;
-		cout<<"Ejercicio 1"<<endl;
-		cout<<"Ejercicio 2"<<endl;
-		cout<<"Ejercicio 3" <<endl;
+	
+	cout<<"Ingrese numero para opcion: ";
+	cin >> option;
+	cout<<"Ejercicio 1"<<endl;
+	cout<<"Ejercicio 2"<<endl;
+	cout<<"Ejercicio 3" <<endl;
 		if(option == 1){
 		    int randomNumber = 0;
 			cout<<"Entro al ejercicio 1 "<<endl;
