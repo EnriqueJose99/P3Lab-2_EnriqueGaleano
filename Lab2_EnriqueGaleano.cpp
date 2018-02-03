@@ -42,7 +42,9 @@ double compracionDe180(double, double, double);
 //Factorial 
 int factorial(int);
 
-//TODO:: numero triangular previo
+//Funcion de 3 ejercicio
+
+long int tercerEjrcicio(long int);
 
 int main(){
 	int option = 0;
@@ -50,6 +52,9 @@ int main(){
 	//while(option != 4){
 		cout<<"Ingrese numero para opcion: ";
 		cin >> option;
+		cout<<"Ejercicio 1"<<endl;
+		cout<<"Ejercicio 2"<<endl;
+		cout<<"Ejercicio 3" <<endl;
 		if(option == 1){
 		    int randomNumber = 0;
 			cout<<"Entro al ejercicio 1 "<<endl;
@@ -75,6 +80,7 @@ int main(){
 			cout<<"-------------------------";
 						
 			cout<<"Parte numero 3"<<endl;
+			cout<<"El numero triangular Previo"<<numeroTriangularPevio(numeroVerificacion);
 		}
 		if(option == 2){
 			double ladOA = 0, ladOB = 0, ladOC = 0;
@@ -107,7 +113,9 @@ int main(){
 			int fact = 0;
 			cout<<"Ingrese un numero de factorial: " << endl;
 			cin >> fact;
-			factorial(fact);
+			tercerEjrcicio(fact);
+			
+
 		}
 			
 	return 0;
@@ -173,8 +181,14 @@ int numeroTriangularPevio(int numeroPrevio){
 	for(int i=1;i<numeroPrevio;i++){
 		centinela1= centinela1+i;
 		if(centinela1 == numeroPrevio){
-
+			
+			cout<<"El numero triangular" <<numeroPrevio<<endl;
+			break;
+			
 		}
+	}
+	if(centinela1 != numeroPrevio){
+		numeroTriangularPevio(numeroPrevio- 1);
 	}
 
 }
@@ -271,4 +285,18 @@ int factorial(int factorial){
 		centin = factor *i;
 	}
 	cout<<"El factorial del numero es: " <<centin;
+}
+
+//tercer ejrcicio
+
+long int tercerEjrcicio(int fact){
+	long int numeroParaCalcular = 0;
+	for(int i=0;i<fact;i++){
+		if(i == 0){
+			cout<<1<<endl;
+		}else{
+			numeroParaCalcular = ((factorial(2*i))/((factorial(i +1))*(factorial(i))));
+		}
+	}
+
 }
